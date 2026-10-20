@@ -19,3 +19,8 @@ Validation: JavaScript syntax, section anchors, duplicate IDs, local media paths
 
 ## Multi-page editorial update
 Seven linked pages: Home, The Villa, Location, Experiences, Gallery, FAQs, Book Your Stay. Charcoal and champagne visual system with overlapping image/content panels inspired by the supplied Amare screenshot; content is original and does not borrow Amare's amenities, pricing, reviews or contact details. Location remains awaiting confirmation. Gallery category filters/fullscreen keyboard controls, FAQ search, accessible navigation and enquiry flow are implemented. Photos and the motion film are now hosted locally. Google Fonts remains an external dependency.
+
+## Mobile update
+Responsive phone/tablet navigation, compact headings and image heights, safe-area-aware booking CTA, 16px form fields, swipe gallery, inline muted video, short scroll reveals and gentle mobile parallax. Animations respect Reduce Motion. Browser/device visual testing remains outstanding.
+
+For Vercel, select Other with no build command and set Output Directory to `dist`.
