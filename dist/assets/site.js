@@ -34,3 +34,17 @@ let swipeStart=null;
 modal.addEventListener('touchstart',e=>{swipeStart=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null},{passive:true});
 modal.addEventListener('touchend',e=>{if(!swipeStart||!e.changedTouches.length)return;const dx=e.changedTouches[0].clientX-swipeStart.x,dy=e.changedTouches[0].clientY-swipeStart.y;swipeStart=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.5&&galleryItems.length>1)nextPhoto(dx<0?1:-1)},{passive:true});
 modal.addEventListener('touchcancel',()=>{swipeStart=null},{passive:true});
+
+// Footer loops restart on entry instead of running unseen from page load.
+const animatedFooter=document.querySelector('.footer');
+if(animatedFooter&&!reduceMotion){
+  if('IntersectionObserver' in window){
+    animatedFooter.classList.add('footer-motion-ready');
+    const footerObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>entry.target.classList.toggle('footer-motion-active',entry.isIntersecting));
+    },{threshold:0,rootMargin:'0px 0px -20px 0px'});
+    footerObserver.observe(animatedFooter);
+  }else{
+    animatedFooter.classList.add('footer-motion-active');
+  }
+}
