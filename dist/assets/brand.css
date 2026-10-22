@@ -1,0 +1,37 @@
+/* Client palette. Shared by the link page and all villa pages. */
+:root{--warm-ivory:#F4F0E6;--limestone:#D6CEB8;--greige:#B8B09D;--taupe:#9C917D;--olive:#858471;--teak:#A8774F;--charcoal:#34352F;--brand-font:'Cinzel',Georgia,serif;--ivory:var(--warm-ivory);--sand:var(--limestone);--forest:var(--charcoal);--deep:var(--charcoal);--ink:var(--charcoal);--muted:var(--charcoal);--gold:var(--teak)}
+body{background:var(--warm-ivory);color:var(--charcoal)}
+::selection{background:var(--limestone);color:var(--charcoal)}
+.brand{font-family:var(--brand-font);font-weight:600;letter-spacing:.12em;color:var(--warm-ivory);line-height:1.05}
+.brand small,.brand-sub{font-family:var(--brand-font);font-weight:600;letter-spacing:.48em;line-height:1.8}
+.footer .footer-wordmark{font-family:var(--brand-font);font-weight:500;font-size:clamp(60px,17vw,260px);letter-spacing:.02em;line-height:1.1;color:var(--warm-ivory)}
+.footer-wordmark small{display:block;font-size:.13em;letter-spacing:.5em;line-height:2}
+.rooms,.intro,.gallery,.stay-details,.home-reasons,.page-intro,.overlap-panel,.room-detail,.location-layout,.faq-page,.booking-top{background:var(--warm-ivory);color:var(--charcoal)}
+.moment,.explorer,.rituals,.quiet-cta,.island-card{background:var(--limestone);color:var(--charcoal)}
+.section-copy,.ritual-card p,.faq-list p,.space-detail p,.page-intro p,.overlap-panel p,.overlap-panel ul,.overlap-panel h2,.overlap-panel .text-link,.editorial-grid p,.room-detail p,.location-layout p,.travel-notes p,.booking-top p,.reason p,.quiet-cta p,.faq-list summary,.faq-search,.faq-empty,.island-card small,.island-card span,.booking-top .rate-note,.subtle-note{color:var(--charcoal)!important}
+.intro h2 em,.room-number,.ritual-time,.explorer small,.intro-content .eyebrow,.room-detail .eyebrow,.editorial-grid .eyebrow,.search-label,.gallery-count{color:var(--charcoal)}
+.intro-overlap{border-color:var(--warm-ivory)}.tiny-seal{background:var(--warm-ivory);color:var(--charcoal);border-color:var(--olive)}
+.btn,.floating-book,.booking-form .btn,.filter-bar button.active{background:var(--limestone);color:var(--charcoal);border-color:var(--taupe)}
+.btn:hover,.booking-form .btn:hover{background:var(--greige)}
+.btn-outline{background:transparent;color:var(--warm-ivory);border-color:var(--limestone)}
+.pool,.booking,.footer,.mobile-panel,.mobile-panel.open,.site-header.scrolled{background:var(--charcoal);color:var(--warm-ivory)}
+.pool-heading p,.pool-caption,.booking p,.footer-top p,.footer-bottom,.footer-nav strong,.footer-escape,.nav-links a,.nav-actions .btn,.site-header .menu-toggle,.mobile-panel a,.field label,.form-note,.night-summary{color:var(--warm-ivory)!important}
+.mobile-panel a.active{color:var(--limestone)}.nav-links a.active:after{background:var(--teak)}
+.plan,.plan button,.room-info,.faq-list details,.specs,.room-detail ul,.travel-notes,.reason,.stay-details,.villa-strip,.booking-top .rate-note,.filter-bar button,.faq-search,.island-card{border-color:var(--taupe)}
+.plan button{background:var(--warm-ivory);color:var(--charcoal)}.plan button[aria-pressed=true],.plan button:last-child{background:var(--charcoal);color:var(--warm-ivory)}
+.filter-bar button{color:var(--charcoal)}.reason b{color:var(--teak)}.text-link{border-color:var(--teak)}.text-link:hover{color:var(--teak)}
+.island-card svg{fill:var(--olive);stroke:var(--charcoal)}.scroll-progress{background:var(--teak)}
+.preview-ribbon{background:var(--limestone);color:var(--charcoal)}
+.field input,.field select,.field textarea{color:var(--warm-ivory);border-color:var(--olive)}.field select option{color:var(--charcoal)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline-color:var(--teak)}
+.hero-shade{background:linear-gradient(180deg,#34352F90,transparent 35%,#34352F99)}.page-hero:after{background:linear-gradient(180deg,#34352F99,#34352F55 30%,#34352Fdd)}
+/* Link-in-bio entry retains its existing spacing and motion. */
+body.link-page{--bg:var(--warm-ivory);--cream:var(--charcoal);--muted:var(--charcoal);--gold:var(--charcoal);color-scheme:light;background:var(--warm-ivory)}
+.link-page:before{background:linear-gradient(180deg,var(--warm-ivory),#D6CEB840)}
+.link-page .brand{font:600 clamp(45px,12vw,64px)/1.1 var(--brand-font);letter-spacing:.12em;color:var(--charcoal)}
+.link-page .brand-sub{font-size:12px;color:var(--charcoal)}
+.link-page .destination{background:var(--limestone);border-color:var(--limestone);color:var(--charcoal)}
+.link-page .destination.featured{background:var(--charcoal);border-color:var(--charcoal);color:var(--warm-ivory)}
+.link-page .badge{color:var(--charcoal);border-color:var(--taupe)}.link-page .ornament{stroke:var(--teak)}
+@media(hover:hover){.link-page .destination:hover{background:var(--greige);border-color:var(--olive)}.link-page .destination.featured:hover{background:var(--charcoal);border-color:var(--teak)}}
+@media(max-width:760px){.footer .footer-wordmark{font-size:17vw}.brand{font-size:26px}}
