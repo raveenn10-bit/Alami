@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#242522">
+<meta name="description" content="Your Alami Villa escape begins here. Explore the villa and discover ways to connect.">
+<title>Alami Villa | Your Escape Begins Here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#242522;--deep:#1b1e1a;--gold:#c8ad7d;--cream:#e8dfcc;--muted:#c2b79f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:48px 24px calc(28px + env(safe-area-inset-bottom,0px));position:relative;isolation:isolate}
+body:before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,#c8ad7d0e,transparent 65%),linear-gradient(180deg,transparent,var(--deep))}
+main{width:min(100%,440px);text-align:center}header{margin:14px 0 44px}.brand{font:300 clamp(48px,13vw,68px)/1 'Cormorant Garamond',Georgia,serif;letter-spacing:.19em;color:#cdb992;margin:0;padding-left:.19em}.brand-sub{font-size:9px;letter-spacing:.48em;margin:12px 0 0;padding-left:.48em;color:var(--gold)}.divider{display:block;width:36px;height:1px;background:var(--gold);opacity:.55;margin:28px auto 22px}.welcome{font:400 24px/1.2 'Cormorant Garamond',Georgia,serif;margin:0;color:var(--cream)}
+nav{display:grid;gap:13px}.destination{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px;padding:17px 24px;border:1px solid #c8ad7d65;border-radius:36px;background:#30312b;color:var(--cream);text-decoration:none;transition:transform .25s,background .25s,border-color .25s;animation:enter .65s both;animation-delay:var(--delay,0s)}.destination.featured{background:#c6ae83;color:#242522;border-color:#c6ae83}.label{flex:1;text-align:left;font-size:14px;font-weight:500}.arrow{font-size:18px;line-height:1}.badge{font-size:8px;letter-spacing:.09em;text-transform:uppercase;color:#c2b79f;border:1px solid #c8ad7d40;padding:4px 6px;border-radius:8px}
+.destination:focus-visible{outline:2px solid var(--gold);outline-offset:5px}.destination:active{transform:scale(.985)}@media(hover:hover){.destination:hover{background:#404237;border-color:var(--gold);transform:translateY(-2px)}.destination.featured:hover{background:#dfcba7}}
+.preview-note{font-size:10px;line-height:1.8;color:var(--muted);max-width:330px;margin:26px auto 0}.footnote{font-size:8px;letter-spacing:.25em;color:var(--gold);margin:38px 0 0}.ornament{width:70px;height:32px;margin:0 auto 22px;fill:none;stroke:var(--gold);stroke-width:1;opacity:.7}.ornament path{stroke-dasharray:120;animation:draw 4s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}@keyframes draw{from{stroke-dashoffset:120}to{stroke-dashoffset:0}}
+@media(max-width:380px){body{padding-left:18px;padding-right:18px}.destination{padding:16px 18px;min-height:58px}header{margin-bottom:32px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<svg class="ornament" viewBox="0 0 70 32" aria-hidden="true"><path d="M7 27Q35 27 63 5M23 25Q15 7 35 19M35 19Q32 0 47 13M36 19Q53 30 58 9"/></svg>
+<h1 class="brand">ALAMI</h1><p class="brand-sub">PRIVATE VILLA</p>
+<span class="divider" aria-hidden="true"></span><p class="welcome">Your escape begins here.</p>
+</header>
+<nav aria-label="Explore Alami Villa and booking platforms">
+<a class="destination featured" href="../dist/index.html"><span class="label">Visit Website</span><span class="arrow" aria-hidden="true">→</span></a>
+<a class="destination" style="--delay:.07s" href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer" aria-label="Airbnb — demo, opens Airbnb homepage"><span class="label">Airbnb</span><span class="badge">Demo</span><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="destination" style="--delay:.14s" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — demo, opens Instagram homepage"><span class="label">Instagram</span><span class="badge">Demo</span><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="destination" style="--delay:.21s" href="https://www.booking.com/" target="_blank" rel="noopener noreferrer" aria-label="Booking.com — demo, opens Booking.com homepage"><span class="label">Booking.com</span><span class="badge">Demo</span><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="destination" style="--delay:.28s" href="https://www.whatsapp.com/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp — demo, owner contact not yet connected"><span class="label">WhatsApp</span><span class="badge">Demo</span><span class="arrow" aria-hidden="true">↗</span></a>
+</nav>
+<p class="preview-note">Preview: demo buttons open the platform websites.<br>Villa listings and contact links will be connected soon.</p>
+<p class="footnote">SRI LANKA · SLOW LIVING</p>
+</main>
+</body>
+</html>
