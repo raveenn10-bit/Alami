@@ -48,3 +48,37 @@ if(animatedFooter&&!reduceMotion){
     animatedFooter.classList.add('footer-motion-active');
   }
 }
+
+
+// Alami AI Concierge — client UI only; Gemini key stays server-side.
+(function initAlamiConcierge(){
+  if(document.querySelector('.alami-concierge')) return;
+  const wrap=document.createElement('aside');
+  wrap.className='alami-concierge';
+  wrap.innerHTML='<button class="concierge-launch" type="button" aria-expanded="false" aria-controls="conciergePanel">✦ <span>Ask Alami</span></button><section class="concierge-panel" id="conciergePanel" hidden aria-label="Alami AI Concierge"><div class="concierge-head"><div><span class="eyebrow">ALAMI CONCIERGE</span><strong>How can we make your stay special?</strong></div><button class="concierge-close" type="button" aria-label="Close Concierge">×</button></div><div class="concierge-messages" aria-live="polite"><div class="concierge-message concierge-message--bot">Welcome to Alami. Ask me about the villa, experiences or planning your stay.</div></div><form class="concierge-form"><label class="sr-only" for="conciergeInput">Your question</label><input id="conciergeInput" maxlength="1200" autocomplete="off" placeholder="Ask about your escape…"><button type="submit" aria-label="Send question">↗</button></form><p class="concierge-note">AI Concierge · Availability is confirmed by the owner.</p></section>';
+  document.body.appendChild(wrap);
+  const launch=wrap.querySelector('.concierge-launch');
+  const panel=wrap.querySelector('.concierge-panel');
+  const close=wrap.querySelector('.concierge-close');
+  const form=wrap.querySelector('.concierge-form');
+  const input=wrap.querySelector('#conciergeInput');
+  const messages=wrap.querySelector('.concierge-messages');
+  const toggle=(open)=>{panel.hidden=!open;launch.setAttribute('aria-expanded',String(open));if(open)input.focus()};
+  launch.addEventListener('click',()=>toggle(panel.hidden));
+  close.addEventListener('click',()=>toggle(false));
+  form.addEventListener('submit',async(event)=>{
+    event.preventDefault();
+    const message=input.value.trim();
+    if(!message||form.dataset.loading==='true')return;
+    const user=document.createElement('div');user.className='concierge-message concierge-message--user';user.textContent=message;messages.appendChild(user);
+    input.value='';form.dataset.loading='true';
+    const loading=document.createElement('div');loading.className='concierge-message concierge-message--bot';loading.textContent='One moment…';messages.appendChild(loading);messages.scrollTop=messages.scrollHeight;
+    try{
+      const response=await fetch('/api/ai-concierge',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message})});
+      const result=await response.json();
+      if(!response.ok)throw new Error(result.error||'Unavailable');
+      loading.textContent=result.reply;
+    }catch(error){loading.textContent='I’m sorry, I can’t answer right now. Please send an enquiry through the booking page and the owner will help you.'}
+    finally{form.dataset.loading='false';messages.scrollTop=messages.scrollHeight}
+  });
+})();
